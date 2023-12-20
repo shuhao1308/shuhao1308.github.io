@@ -1,0 +1,25 @@
+
+<div class="progress-bar">
+  <div class="progress"></div>
+</div>
+let progress = document.querySelector('.progress');
+let width = 0;
+let interval = setInterval(() => {
+  width++;
+  progress.style.width = width + '%';
+  if (width >= 100) {
+    clearInterval(interval);
+  }}, 50);
+.progress-bar {
+  width: 300px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.5s ease-in-out;
+}
